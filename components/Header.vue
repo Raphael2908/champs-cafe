@@ -1,6 +1,9 @@
 <template>
     <section class="flex w-full justify-between p-5 flex-wrap">
-        <h1 class="text-xl font-extrabold">Champs Cafe</h1>
+
+        <NuxtLink to="/">
+            <h1 class="text-xl font-extrabold">Champs Cafe</h1>
+        </NuxtLink>
         <ul class="flex gap-5">
             <li>
                 <h1>About</h1>

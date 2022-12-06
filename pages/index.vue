@@ -1,6 +1,5 @@
-<template>
-    <Header class="sticky"/>
-
+<template id="test">
+    <ReservationForm @modal="reservationEventHandler" :show="reservation"/>
     <!-- Abra -->
     <section class="h-screen flex flex-col items-center justify-end bg-abra-purple relative gap-5 pt-10">
         <h1 class="text-3xl font-extrabold text-white md:text-5xl lg:text-6xl">The cafe for 
@@ -10,6 +9,7 @@
         color="bg-yellow-400"
         textColor="text-white"
         shadowColor="shadow-yellow-400/50"
+        @click="reservation = true"
         >
             Make a reservation
         </Button>
@@ -41,18 +41,20 @@
         <img class="absolute bottom-0 h-36 md:h-56 object-contain" src="/landing/Squirtle.png" alt="">
        
     </section>
-
-
 </template>
 
-<script>
-import { defineComponent } from '@vue/composition-api'
 
-export default defineComponent({
+<script>
+export default {
     setup() {
         
     },
-
+    props:{
+        validation: {
+            Type: Object,
+            default: ()=> {}        
+        }
+    },
     data() {
         return {
             menu: [
@@ -66,8 +68,16 @@ export default defineComponent({
                     heading: "Victory Road Bowl",
                     body: "Salmon and avacado made for our toughest trainers"
                 }
-            ]
+            ],
+            reservation: false
+        }
+    },
+    methods:{
+        reservationEventHandler(target){
+            if(target.id == "backdrop_container"){
+                this.reservation = false
+            }
         }
     }
-})
+}
 </script>

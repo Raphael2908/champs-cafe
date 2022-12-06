@@ -1,6 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    modules: ['@nuxtjs/tailwindcss'],
+    modules: [
+        '@nuxtjs/tailwindcss', 
+        // 'vue-sweetalert2/nuxt'
+    ],
     runtimeConfig: {
         // The private keys which are only available within server-side
         // apiSecret: '123',
