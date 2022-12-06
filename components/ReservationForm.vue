@@ -12,19 +12,19 @@
                 <h1 class="text-lg font-bold text-center md:text-xl lg:text-3xl">Enter your reservation details</h1>
                 <div>
                     <label for="" class="block text-red-500 text-xs mb-2" v-if="errorBag.name">{{ errorBag.name }}</label>
-                    <input v-model="this.name" class="px-2 py-3 rounded-md outline active:outline-pokemon-blue w-full" type="text" placeholder="Name">
+                    <input v-model="name" class="px-2 py-3 rounded-md outline active:outline-pokemon-blue w-full" type="text" placeholder="Name">
                 </div>
                 <div>
                     <label for="" class="block text-red-500 text-xs mb-2" v-if="errorBag.email">{{ errorBag.email }}</label>
-                    <input v-model="this.email" class="px-2 py-3 rounded-md outline active:outline-pokemon-blue w-full" type="text" placeholder="Email">
+                    <input v-model="email" class="px-2 py-3 rounded-md outline active:outline-pokemon-blue w-full" type="text" placeholder="Email">
                 </div>
                 <div>
                     <label for="" class="block text-red-500 text-xs mb-2" v-if="errorBag.phone_num">{{ errorBag.phone_num }}</label>
-                    <input v-model.number="this.phone_num" class="px-2 py-3 rounded-md outline active:outline-pokemon-blue w-full" type="tel" placeholder="Phone Number">
+                    <input v-model.number="phone_num" class="px-2 py-3 rounded-md outline active:outline-pokemon-blue w-full" type="tel" placeholder="Phone Number">
                 </div>
                 <div>
                     <label for="" class="block text-red-500 text-xs mb-2" v-if="errorBag.date_booked">{{ errorBag.date_booked }}</label>
-                    <input v-model="this.date_booked" class="px-2 py-3 rounded-md outline active:outline-pokemon-blue w-full" type="datetime-local" placeholder="date and time">
+                    <input v-model="date_booked" class="px-2 py-3 rounded-md outline active:outline-pokemon-blue w-full" type="datetime-local" placeholder="date and time">
                 </div>
 
                 <button
