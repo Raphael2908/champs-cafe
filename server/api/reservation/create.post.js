@@ -1,9 +1,9 @@
-import { bookingValidation } from '../../helpers/bookingHelpers'
+import { reservationValidation } from '../../helpers/reservationHelpers'
 import { supabase } from '../../db/client'
 
 export default defineEventHandler( async (event) => {
   const body = await readBody(event)
-  const validation = bookingValidation(body)
+  const validation = reservationValidation(body)
 
   if(validation.isValid == false){
     return validation
@@ -25,7 +25,7 @@ export default defineEventHandler( async (event) => {
   const dateBooked = new Date(body.date_booked)
   return {
     status: 'success',
-    message: `Date booked! ${dateBooked.toLocaleString('en-GB', { timeZone: 'SST' })}`
+    message: `Date Reserved! ${dateBooked.toLocaleString('en-GB', { timeZone: 'SST' })}`
   }
 })
 

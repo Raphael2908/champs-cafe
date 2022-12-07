@@ -6,9 +6,7 @@
             <span class="text-yellow-400">Champions</span>
         </h1>
         <Button
-        color="bg-yellow-400"
-        textColor="text-white"
-        shadowColor="shadow-yellow-400/50"
+        class="bg-yellow-400 text-white shadow-yellow-400/50 shadow-lg text-xl hover:shadow-yellow-300/80 hover:scale-110 active:scale-100 md:text-2xl"
         @click="reservation = true"
         >
             Make a reservation

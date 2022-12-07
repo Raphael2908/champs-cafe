@@ -5,7 +5,7 @@ export default defineEventHandler( async (event) => {
   const body = await readBody(event)
   
   const { error } = await supabase
-  .from('bookings')
+  .from('reservations')
   .update({
     date_booked: body.date_booked,
     email: body.email,
@@ -17,5 +17,5 @@ export default defineEventHandler( async (event) => {
   if(error){
     return error
   }
-  return 'Booking Updated!'
+  return 'reservation Updated!'
 })

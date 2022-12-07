@@ -49,7 +49,7 @@ function isValidDate(date){
     
     if(!date){
         dateError.isValid = false
-        dateError.errorMessage = "Please enter the date you want to book"
+        dateError.errorMessage = "Please enter the date you want to reserve"
         return dateError
     }
     else if(validator.isDate(new Date(date)) == false){
@@ -60,7 +60,7 @@ function isValidDate(date){
     return true
 }
 
-export function bookingValidation(body) {
+export function reservationValidation(body) {
     let errorBag = {}
 
     const validName = isValidName(body.name)

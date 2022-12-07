@@ -80,7 +80,7 @@ export default {
     },
     methods:{
         async submit(){
-            await useFetch('api/booking/create',{
+            await useFetch('api/reservation/create',{
                 method:'POST',
                 body:{
                     name: this.name,
@@ -91,7 +91,7 @@ export default {
             }).then((res) => {
                 // Handles form validation in the backend
                 if(res.data.value.errorBag){
-                this.errorBag = res.data.value.errorBag
+                    this.errorBag = res.data.value.errorBag
                 }
                 // Sends a toast if the status is success
                 if(res.data.value.status == 'success' ){
@@ -99,10 +99,18 @@ export default {
                     Swal.fire({
                         text: res.data.value.message,
                         toast: true,
-                        position: 'top-right',
+                        position: 'top',
                         icon: res.data.value.status,
                     })
                 }
+            }).catch( (error) => {
+                Swal.fire({
+                    titleText: "Error",
+                    text: error,
+                    toast: true,
+                    position: 'top',
+                    icon: 'error',
+                })
             })
         }
     }
