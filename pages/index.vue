@@ -39,6 +39,19 @@
         <img class="absolute bottom-0 h-36 md:h-56 object-contain" src="/landing/Squirtle.png" alt="">
        
     </section>
+
+      <div class="min-h-screen bg-[#1A202C]">
+    <div class="container mx-auto p-6">
+      <img src="https://static.pokemonpets.com/images/monsters-images-800-800/8229-Mega-Houndoom.webp" class="w-64 mx-auto mb-6" alt="Mega Houndoom">
+      <h1 class="text-3xl font-bold text-center text-white mb-6">Welcome to the Pokemon Cafe!</h1>
+      <p class="text-white text-center mb-6">
+        We are a new pokemon theme cafe that serves delicious coffee and amazing breakfast meals. Come visit us and see for yourself!
+      </p>
+      <div class="flex justify-center">
+        <a href="#" class="px-3 py-2 rounded-md bg-yellow-400 text-white hover:bg-yellow-500">Visit Us</a>
+      </div>
+    </div>
+  </div>
 </template>
 
 
