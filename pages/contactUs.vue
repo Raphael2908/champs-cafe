@@ -2,7 +2,7 @@
     <section class="container mx-auto w-full px-4">
         <div class="flex items-center">
             <h1 class="text-2xl font-bold text-gray-800">Contact Us</h1>
-            <img class="h-16" src="contact_us/ROtom.png" alt="" srcset="">
+            <img class="h-16" src="/contact_us/ROtom.png" alt="" srcset="">
         </div>
         <form @submit.prevent="messageReinhardt" method="post">
         <div class="flex flex-col gap-2">
