@@ -40,7 +40,7 @@
 <style scoped>
 .bounce2 {
   animation: bounce2 0.5s ease;
-  transform: scale(50%); 
+  transform: scale(100%); 
 }
 @keyframes bounce2 {
 	0% {
