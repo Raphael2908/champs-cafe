@@ -2,7 +2,7 @@
     <section class="flex w-full justify-between items-center container mx-auto py-5 flex-wrap px-4">
 
         <NuxtLink to="/">
-            <h1 class="text-xl font-extrabold">Champs Cafe</h1>
+            <h1 class="text-xl font-extrabold text-gray-800">Champs Cafe</h1>
         </NuxtLink>
         <ul class="flex gap-5 items-center">
             <li>
@@ -12,7 +12,9 @@
                 <h1>Menu</h1>
             </li>
             <li>
-                <h1>Contact Us</h1>
+                <NuxtLink to="/contactUs">
+                    <Button class="bg-orange-400 text-white shadow-orange-400/50 shadow-lg">Contact Us</Button>
+                </NuxtLink>
             </li>
             <li>
                 <NuxtLink to="/reservations">
