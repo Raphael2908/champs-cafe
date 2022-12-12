@@ -43,25 +43,39 @@
        
     </section>
 
-    <div class="min-h-screen bg-[#1A202C]">
+    <div class=" bg-[#1A202C]">
         <div class="container mx-auto p-6">
             <img src="https://static.pokemonpets.com/images/monsters-images-800-800/8229-Mega-Houndoom.webp" class="w-64 mx-auto mb-6" alt="Mega Houndoom">
-            <h1 class="text-3xl font-bold text-center text-white mb-6">Welcome to the Pokemon Cafe!</h1>
-            <p class="text-white text-center mb-6">
-            We are a new pokemon theme cafe that serves delicious coffee and amazing breakfast meals. Come visit us and see for yourself!
-            </p>
-            <div class="flex justify-center">
-            <a href="#" class="px-3 py-2 rounded-md bg-yellow-400 text-white hover:bg-yellow-500">Visit Us</a>
-            </div>
+           <h1 class="text-white font-bold text-4xl text-center pb-10">Come eat with us!</h1>
+           <div class="flex flex-col text-white text-xl justify-center items-center divide-y-2">
+               <div class="text-center pb-5">
+                   <p class="font-bold">9am - 10pm</p>
+                   <p class="font-thin">Fri Sat Sun </p>
+               </div>
+               <div class="text-center py-5">
+                    <p class="font-bold">11am - 8pm</p>
+                    <p class="font-thin">Mon Tue Wed Thu </p>
+               </div>
+
+               <div class="flex gap-3 py-5 items-center">
+                    <MapPinIcon class="h-16 w-16 "/>
+                    <h1>Lavender Town</h1>
+               </div>
+           </div>
+
         </div>
   </div>
 </template>
 
 
 <script>
+import { MapPinIcon } from "@heroicons/vue/24/solid/index.js"
 export default {
     setup() {
         
+    },
+    components:{
+        MapPinIcon
     },
     props:{
         validation: {

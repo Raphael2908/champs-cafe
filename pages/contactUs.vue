@@ -65,7 +65,7 @@ export default {
         async messageReinhardt() {  
             const Toast = Swal.mixin({
                 toast: true,
-                position: 'top-right',
+                position: 'top',
                 iconColor: 'green',
                 customClass: {
                 popup: 'colored-toast'
@@ -79,13 +79,27 @@ export default {
                 method: 'POST',
                 body: this.form
             })
-            console.log(res.data.value)
             if(res.data.value == 'success'){
                 this.errorBag = {}
                 await Toast.fire({
                 icon: 'success',
                 title: 'Message Delivered'
                 })
+            }
+            else if(res.data.value == null){
+                Swal.fire({
+                    toast: true,
+                    position: 'top',
+                    icon: 'error',
+                    iconColor: 'red',
+                    customClass: {
+                    popup: 'colored-toast'
+                    },
+                    showConfirmButton: false,
+                    timer: 1500,
+                    timerProgressBar: true
+                })
+                return 
             }
 
             if(res.data.value != 'success'){
