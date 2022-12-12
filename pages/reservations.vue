@@ -49,7 +49,7 @@
 
         <div v-else class="flex items-center justify-end md:justify-center">
             <div class="relative">
-                <img class="h-64 md:h-72" src="reservation/pickachu_point.jpeg" alt="">
+                <img class="h-64 md:h-72" src="/reservation/pickachu_point.jpeg" alt="">
                 <Button
                 @click="inputNumber"
                 class="bg-yellow-400 text-white shadow-yellow-400/50 shadow-lg absolute right-36 top-20 md:right-44 sm:whitespace-nowrap">
