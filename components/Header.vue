@@ -55,12 +55,12 @@
 </style>
 
 <script>
-import { Bars3Icon } from '@heroicons/vue/24/solid'
+import { Bars3Icon } from "@heroicons/vue/24/solid/index.js"
 export default {
     setup() {
         
     },
-    components:{
+    components: {
         Bars3Icon
     },
     data(){
