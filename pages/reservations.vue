@@ -1,7 +1,15 @@
 <template>
     <section class="container mx-auto w-full px-4">
-        <h1 class="text-2xl font-bold text-gray-800 pb-5">Your reservations</h1>
-        <div class="w-full text-left border rounded-md border-collapse overflow-x-scroll shadow-md">
+        <div class="flex gap-5 pb-5 items-center flex-wrap">
+            <h1 class="text-2xl font-bold text-gray-800 ">Your reservations</h1>
+            <Button 
+            v-if="reservations" 
+            @click="inputNumber" 
+            class="bg-yellow-400 text-white shadow-yellow-400/50 shadow-lg">
+            Find your reservation
+            </Button>
+        </div>
+        <div v-if="reservations" class="w-full text-left border rounded-md border-collapse overflow-x-scroll shadow-md">
             <table class="w-full">
                 <thead class="text-white bg-gray-600">
                     <tr>
@@ -38,6 +46,19 @@
                 </tbody>
             </table>
         </div>
+
+        <div v-else class="flex items-center justify-end md:justify-center">
+            <div class="relative">
+                <img class="h-64 md:h-72" src="reservation/pickachu_point.jpeg" alt="">
+                <Button
+                @click="inputNumber"
+                class="bg-yellow-400 text-white shadow-yellow-400/50 shadow-lg absolute right-36 top-20 md:right-44 sm:whitespace-nowrap">
+                Find your reservation
+                </Button>
+            </div>
+            
+        </div>
+
     </section>
 </template>
 
@@ -55,8 +76,28 @@ export default {
             col: null,
         }
     },
-    mounted() {
-        Swal.fire({
+
+    methods:{
+        sort(column){
+            if(this.col == null || this.col != column){
+                this.col = column
+                this.asc = false
+            }
+
+            if(this.col == column){
+                this.asc = !this.asc
+            }
+            
+            return useFetch(`api/reservation/getReservation?phone_num=${this.phoneNumber}&col=${this.col}&asc=${this.asc}`)
+            .then( (res) => {
+                console.log(this.col, this.asc)
+                this.reservations = res.data
+                return res
+            })
+        },
+
+        inputNumber(){
+            Swal.fire({
             title: 'Please enter your phone no.',
             input: 'text',
             inputAttributes: {
@@ -88,29 +129,11 @@ export default {
                     return error
                 })
             },
-            allowOutsideClick: false,
-            }).then((result) => {
-                if(!result.isConfirmed){
+            allowOutsideClick: true,
+            }).then((event) => {
+                if (event.dismiss == Swal.DismissReason.cancel){
                     navigateTo('/')
                 }
-            })
-    },
-    methods:{
-        sort(column){
-            if(this.col == null || this.col != column){
-                this.col = column
-                this.asc = false
-            }
-
-            if(this.col == column){
-                this.asc = !this.asc
-            }
-            
-            return useFetch(`api/reservation/getReservation?phone_num=${this.phoneNumber}&col=${this.col}&asc=${this.asc}`)
-            .then( (res) => {
-                console.log(this.col, this.asc)
-                this.reservations = res.data
-                return res
             })
         }
     }

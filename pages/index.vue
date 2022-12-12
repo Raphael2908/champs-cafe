@@ -1,7 +1,7 @@
 <template id="test">
     <ReservationForm @modal="reservationEventHandler" :show="reservation"/>
     <!-- Abra -->
-    <section class="h-screen flex flex-col items-center justify-end bg-abra-purple relative gap-5 pt-10">
+    <section class="min-h-screen flex flex-col items-center justify-start bg-abra-purple relative gap-5 pt-10 max-h-screen">
         <h1 class="text-3xl font-extrabold text-white md:text-5xl lg:text-6xl">The cafe for 
             <span class="text-yellow-400">Champions</span>
         </h1>
@@ -12,13 +12,16 @@
             Make a reservation
         </Button>
         <Sprinkles class="hidden sm:block"/>
-        <img class="w-full h-5/6 object-cover object-top md:h-2/3 lg:h-4/5 lg:w-2/3" src="/landing/Abra3D.jpeg" alt="">
+        <div class="overflow-x-hidden w-full flex justify-center items-start overflow-y-hidden">
+            <!-- <img class="w-full h-5/6 object-cover object-top md:h-2/3 lg:h-4/5 lg:w-2/3" src="/landing/Abra3D.jpeg" alt=""> -->
+            <img class="object-cover w-[750px] max-w-none md:w-[700px] lg:w-[1100px] object-top" src="/landing/Abra3D.jpeg" alt="">
+        </div>
     </section>
 
     <!-- Squritle -->
-    <section class="h-screen max-h-screen bg-gradient-to-b from-squirtle-blue to-squirtle-blue-darker relative px-2 overflow-hidden">
+    <section class="min-h-screen bg-gradient-to-b from-squirtle-blue to-squirtle-blue-darker relative px-2 overflow-hidden">
             
-        <article class="flex flex-col h-full justify-center gap-10 items-center">
+        <article class="flex flex-col h-full justify-center gap-10 items-center py-10">
                 <h1 class="text-3xl font-extrabold text-white md:text-5xl lg:text-6xl text-center">Fuel up for your next
                     <span class="text-yellow-400">Battle</span>
                 </h1>
@@ -40,17 +43,17 @@
        
     </section>
 
-      <div class="min-h-screen bg-[#1A202C]">
-    <div class="container mx-auto p-6">
-      <img src="https://static.pokemonpets.com/images/monsters-images-800-800/8229-Mega-Houndoom.webp" class="w-64 mx-auto mb-6" alt="Mega Houndoom">
-      <h1 class="text-3xl font-bold text-center text-white mb-6">Welcome to the Pokemon Cafe!</h1>
-      <p class="text-white text-center mb-6">
-        We are a new pokemon theme cafe that serves delicious coffee and amazing breakfast meals. Come visit us and see for yourself!
-      </p>
-      <div class="flex justify-center">
-        <a href="#" class="px-3 py-2 rounded-md bg-yellow-400 text-white hover:bg-yellow-500">Visit Us</a>
-      </div>
-    </div>
+    <div class="min-h-screen bg-[#1A202C]">
+        <div class="container mx-auto p-6">
+            <img src="https://static.pokemonpets.com/images/monsters-images-800-800/8229-Mega-Houndoom.webp" class="w-64 mx-auto mb-6" alt="Mega Houndoom">
+            <h1 class="text-3xl font-bold text-center text-white mb-6">Welcome to the Pokemon Cafe!</h1>
+            <p class="text-white text-center mb-6">
+            We are a new pokemon theme cafe that serves delicious coffee and amazing breakfast meals. Come visit us and see for yourself!
+            </p>
+            <div class="flex justify-center">
+            <a href="#" class="px-3 py-2 rounded-md bg-yellow-400 text-white hover:bg-yellow-500">Visit Us</a>
+            </div>
+        </div>
   </div>
 </template>
 
@@ -78,7 +81,7 @@ export default {
                     image: "/landing/VictoryRoadBowl.jpeg",
                     heading: "Victory Road Bowl",
                     body: "Salmon and avacado made for our toughest trainers"
-                }
+                },
             ],
             reservation: false
         }

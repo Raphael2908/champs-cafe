@@ -5,15 +5,15 @@
         <p class="text-xs md:text-lg lg:text-xl w-72">{{ body }}</p>
     </div> -->
 
-    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md ">
+    <div class="max-w-sm min-w-full bg-white border border-gray-200 rounded-lg shadow-md max-h-72 w-1/2 md:min-w-min md:max-h-full md:min-h-full">
         <a href="#">
-            <img class="rounded-t-lg object-cover w-full min-h-24 h-72" :src="image" alt="" />
+            <img class="rounded-t-lg object-cover w-full min-h-24 h-48" :src="image" alt="" />
         </a>
         <div class="p-5">
             <a href="#">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-800">{{ heading }}</h5>
+                <h5 class="mb-2 text-sm md:text-2xl font-bold tracking-tight text-gray-800">{{ heading }}</h5>
             </a>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ body }}</p>
+            <p class="mb-3 text-xs md:text-base font-normal text-gray-700 dark:text-gray-400">{{ body }}</p>
         </div>
     </div>
 </template>
