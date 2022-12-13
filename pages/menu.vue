@@ -89,6 +89,13 @@ export default {
                     }
                 })
             }
+            else if (this.category == 'drink'){
+                return this.menu.filter((e) => {
+                    if(e.category == this.category){
+                        return e
+                    }
+                })
+            }
             
         },
     }
