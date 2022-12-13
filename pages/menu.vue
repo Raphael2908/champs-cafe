@@ -70,9 +70,6 @@ export default {
             category: 'all'
         }
     },
-    onMounted(){
-        document.getElementById('1').style('top: -10px')
-    },
     computed: {
         filter() {
             if(this.category == 'all'){
