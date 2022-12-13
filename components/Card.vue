@@ -6,7 +6,7 @@
             <h1 class="font-semibold text-xs md:text-lg text-red-500">{{ hp }} HP</h1>
         </div>
         <div class="h-1/2 overflow-clip border-4 border-yellow-500 shadow-lg rounded-sm relative">
-            <img class="object-cover absolute -top-12 " :src="image" alt="">
+            <img class="object-cover min-h-full" :src="image" alt="">
         </div>
 
         <!-- Card body -->
