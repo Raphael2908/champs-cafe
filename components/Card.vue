@@ -1,17 +1,5 @@
 <template>
-
-    <!-- <div class="max-w-sm min-w-full bg-white border border-gray-200 rounded-lg shadow-md max-h-72 w-1/2 md:min-w-min md:max-h-full md:min-h-full">
-        <a href="#">
-            <img class="rounded-t-lg object-cover w-full min-h-24 h-48" :src="image" alt="" />
-        </a>
-        <div class="p-5">
-            <a href="#">
-                <h5 class="mb-2 text-sm md:text-2xl font-bold tracking-tight text-gray-800">{{ heading }}</h5>
-            </a>
-            <p class="mb-3 text-xs md:text-base font-normal text-gray-700 dark:text-gray-400">{{ body }}</p>
-        </div>
-    </div> -->
-    <div class="h-[400px] w-[248px] bg-white min-w-[248px] rounded-md border-8 border-yellow-400 px-2 py-1 flex flex-col md:h-[500px] md:min-w-[310px]" 
+    <div class="h-[400px] w-[248px] bg-white min-w-[248px] rounded-md border-8 border-yellow-400 px-2 py-1 flex flex-col md:h-[500px] md:min-w-[310px] shadow-lg" 
     :class="typeInfo.element">
         <div class="flex justify-between items-end whitespace-nowrap">
             <h1 class="font-bold text-sm md:text-lg">{{ heading }}</h1>
@@ -24,7 +12,7 @@
         <!-- Card body -->
         <section class="flex flex-col divide-y divide-black h-1/2">
             <div class="text-left py-2 grid grid-cols-3 items-center justify-items-center">
-                <img class="h-4 w-4 justify-self-start" :src="typeInfo.elementImage" alt="">
+                <img class="h-6 w-6 justify-self-start" :src="typeInfo.elementImage" alt="">
                 <h1 class="font-bold">Cost</h1>
                 <h1 class="text-xl justify-self-end">{{ cost }}</h1>
             </div>
@@ -113,6 +101,12 @@ export default {
                 return {
                     element: 'fire',
                     elementImage: '/elementTypes/fireElement.png'
+                }
+            }
+            if(this.element == 'psychic'){
+                return {
+                    element: 'psychic',
+                    elementImage: '/elementTypes/psychicElement.png'
                 }
             }
         }

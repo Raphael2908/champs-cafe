@@ -22,14 +22,19 @@
     <section class="min-h-screen bg-gradient-to-b from-squirtle-blue to-squirtle-blue-darker relative px-2 overflow-hidden">
             
         <article class="flex flex-col h-full justify-center gap-10 items-center py-10">
-                <h1 class="text-3xl font-extrabold text-white md:text-5xl lg:text-6xl text-center">Fuel up for your next
-                    <span class="text-yellow-400">Battle</span>
-                </h1>
+
+            <h1 class="text-3xl font-extrabold text-white md:text-5xl lg:text-6xl text-center">Fuel up for your next
+                <span class="text-yellow-400">Battle</span>
+            </h1>
 
             <!-- Image Slideshow -->
-            <div class="flex flex-col gap-5 container mx-auto">
-                <h1 class="bg-yellow-400 shadow-lg shadow-yellow-400/50 text-white font-semibold rounded-md w-fit px-3 py-1">See all</h1>
-                <div class="flex gap-5 items-start w-full overflow-x-scroll shadow-inner-carousel">
+            <div class="flex flex-col gap-5 container mx-auto px-4">
+                <NuxtLink to="/menu">
+                    <button class="bg-yellow-400 shadow-lg shadow-yellow-400/50 text-white font-semibold rounded-md w-fit px-3 py-1">
+                    See all
+                    </button>
+                </NuxtLink>
+                <div class="flex gap-5 items-start w-full overflow-x-scroll shadow-inner-carousel py-4">
                     <Card v-for="food in menu" :key="food"
                         :image="food.image"
                         :heading="food.heading"
@@ -73,12 +78,21 @@
   </div>
 </template>
 
+<style scoped>
+/* .shadow-inner-carousel{
+    box-shadow: inset 4em 10em black;
+} */
+</style>
 
 <script>
 import { MapPinIcon } from "@heroicons/vue/24/solid/index.js"
 export default {
-    setup() {
-        
+    async setup() {
+        const menu = await useFetch('/api/menu/getMenu')
+
+        return {
+            menu: menu.data.value
+        }
     },
     components:{
         MapPinIcon
@@ -87,57 +101,10 @@ export default {
         validation: {
             Type: Object,
             default: ()=> {}        
-        }
+        },
     },
     data() {
         return {
-            menu: [
-                {
-                    image: "/landing/SquirtleBlueberry.jpeg",
-                    heading: "Squirtle's Blueberry",
-                    body: "A mix of blueberry, strawberry and walnuts with oats for a power snack",
-                    element: "water",
-                    hp: 50,
-                    cost: 8,
-                    calories: 500,
-                    size: '',
-                    warning: 'Contains walnuts'
-                },
-                {
-                    image: "/landing/VictoryRoadBowl.jpeg",
-                    heading: "Victory Road Bowl",
-                    body: "Salmon and avacado made for our toughest trainers",
-                    element: "grass",
-                    hp: 100,
-                    cost: 12,
-                    calories: 500,
-                    size: '',
-                    warning:''
-                },
-                {
-                    image: "/landing/Steak.jpeg",
-                    heading: "Hitmonlee's Snack",
-                    body: "Ribeye laced with sacchrine butter couple with garden veggies",
-                    element: "fighting",
-                    hp: 150,
-                    cost: 18,
-                    calories: 500,
-                    size: '',
-                    warning:''
-                },
-                {
-                    image: "/landing/spicyRamen.jpeg",
-                    heading: "Charizard Breath",
-                    body: "Preminium noodles soaked in a rich broth infused with togarashi, kosho and gochujang",
-                    element: "fire",
-                    hp: 80,
-                    cost: 12,
-                    calories: 600,
-                    size: '',
-                    warning:''
-                },
-                
-            ],
             reservation: false
         }
     },

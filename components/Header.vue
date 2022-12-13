@@ -1,6 +1,6 @@
 <template>
     <section class="sticky top-0 z-10 bg-white bg-opacity-50 backdrop-blur-lg">
-        <div class="flex w-full justify-between items-center container mx-auto py-5 flex-wrap px-4 ">
+        <div class="flex w-full justify-between items-center container mx-auto py-2 flex-wrap px-4 ">
     
             <NuxtLink to="/">
                 <h1 class="text-xl font-extrabold text-gray-800">Champs Cafe</h1>
@@ -12,13 +12,10 @@
             <!-- Nav Items Small -->
             <ul v-show="navItems" class="md:hidden z-10 absolute flex flex-col gap-5 items-center inset-x-0 -bottom-52 bg-white rounded-md mx-5 py-2 shadow-lg border-grey-400 border md:static md:flex-row md:shadow-none md:bg-transparent md:border-0">
                 <li>
-                    <h1>About</h1>
-                </li>
-                <li>
                     <h1>Menu</h1>
                 </li>
                 <li>
-                    <NuxtLink to="/contactUs">
+                    <NuxtLink to="/menu">
                         <Button class="bg-orange-400 text-white shadow-orange-400/50 shadow-lg">Contact Us</Button>
                     </NuxtLink>
                 </li>
@@ -32,10 +29,9 @@
              <!-- Nav Items Big -->
             <ul class="hidden md:flex gap-5 items-center">
                 <li>
-                    <h1>About</h1>
-                </li>
-                <li>
-                    <h1>Menu</h1>
+                    <NuxtLink to="/menu">
+                        <Button class="bg-sky-400 text-white shadow-sky-400/50 shadow-lg">Menu</Button>
+                    </NuxtLink>
                 </li>
                 <li>
                     <NuxtLink to="/contactUs">
