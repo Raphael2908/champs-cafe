@@ -27,13 +27,19 @@
                 </h1>
 
             <!-- Image Slideshow -->
-            <div class="flex flex-col w-3/4">
+            <div class="flex flex-col gap-5 container mx-auto">
                 <h1 class="bg-yellow-400 shadow-lg shadow-yellow-400/50 text-white font-semibold rounded-md w-fit px-3 py-1">See all</h1>
-                <div class="flex gap-5 items-start w-full overflow-x-scroll py-5 shadow-inner-carousel">
+                <div class="flex gap-5 items-start w-full overflow-x-scroll shadow-inner-carousel">
                     <Card v-for="food in menu" :key="food"
                         :image="food.image"
                         :heading="food.heading"
                         :body="food.body"
+                        :element="food.element"
+                        :hp="food.hp"
+                        :cost="food.cost"
+                        :calories="food.calories"
+                        :size="food.size"
+                        :warning="food.warning"
                     />
                 </div>
             </div>
@@ -88,14 +94,49 @@ export default {
             menu: [
                 {
                     image: "/landing/SquirtleBlueberry.jpeg",
-                    heading: "Squirtle Blueberry",
-                    body: "A mix of blueberry, strawberry and walnuts with oats for a power snack"
+                    heading: "Squirtle's Blueberry",
+                    body: "A mix of blueberry, strawberry and walnuts with oats for a power snack",
+                    element: "water",
+                    hp: 50,
+                    cost: 8,
+                    calories: 500,
+                    size: '',
+                    warning: 'Contains walnuts'
                 },
                 {
                     image: "/landing/VictoryRoadBowl.jpeg",
                     heading: "Victory Road Bowl",
-                    body: "Salmon and avacado made for our toughest trainers"
+                    body: "Salmon and avacado made for our toughest trainers",
+                    element: "grass",
+                    hp: 100,
+                    cost: 12,
+                    calories: 500,
+                    size: '',
+                    warning:''
                 },
+                {
+                    image: "/landing/Steak.jpeg",
+                    heading: "Hitmonlee's Snack",
+                    body: "Ribeye laced with sacchrine butter couple with garden veggies",
+                    element: "fighting",
+                    hp: 150,
+                    cost: 18,
+                    calories: 500,
+                    size: '',
+                    warning:''
+                },
+                {
+                    image: "/landing/spicyRamen.jpeg",
+                    heading: "Charizard Breath",
+                    body: "Preminium noodles soaked in a rich broth infused with togarashi, kosho and gochujang",
+                    element: "fire",
+                    hp: 80,
+                    cost: 12,
+                    calories: 600,
+                    size: '',
+                    warning:''
+                },
+                
             ],
             reservation: false
         }
