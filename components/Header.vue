@@ -10,7 +10,8 @@
             </button>
     
             <!-- Nav Items Small -->
-            <ul v-show="navItems" class="md:hidden z-10 absolute flex flex-col gap-5 items-center inset-x-0 -bottom-52 bg-white rounded-md mx-5 py-2 shadow-lg border-grey-400 border md:static md:flex-row md:shadow-none md:bg-transparent md:border-0">
+            <ul v-show="navItems" class="md:hidden z-10 absolute flex flex-col gap-5 items-center inset-x-0 -bottom-52 bg-white rounded-md mx-5 py-2 shadow-lg border-grey-400 border md:static md:flex-row md:shadow-none md:bg-transparent md:border-0"
+            @click="navItems = !navItems">
                  <li>
                     <NuxtLink to="/menu">
                         <Button class="bg-sky-400 text-white shadow-sky-400/50 shadow-lg">Menu</Button>
