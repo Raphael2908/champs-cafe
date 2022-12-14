@@ -1,8 +1,9 @@
+import { defineNuxtConfig } from 'nuxt/config'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     modules: [
         '@nuxtjs/tailwindcss', 
-        // 'vue-sweetalert2/nuxt'
     ],
     runtimeConfig: {
         // The private keys which are only available within server-side
@@ -15,5 +16,8 @@ export default defineNuxtConfig({
         public: {
         //   apiBase: '/api'
         }
+    },
+    app: {
+        pageTransition: { name: 'page', mode: 'out-in' }
     },
 })

@@ -54,11 +54,11 @@
 import { ArrowsPointingOutIcon, ArrowsPointingInIcon } from '@heroicons/vue/24/solid/index'
 export default {
     async setup() {
-       const menu = await useFetch('/api/menu/getMenu')
+        const menu = await useLazyFetch('/api/menu/getMenu')
 
         return {
-            menu: menu.data.value
-        } 
+            menu: menu.data.value 
+        }
     },
     components: {
         ArrowsPointingOutIcon,
@@ -67,7 +67,13 @@ export default {
     data(){
         return {
             expandedView: true,
-            category: 'all'
+            category: 'all',
+        }
+    },
+    props:{
+        menu: {
+            Type: Object,
+            default: () => {}
         }
     },
     computed: {
