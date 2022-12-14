@@ -6,7 +6,7 @@
     :class="[show ? 'block' : 'hidden']"
     >
 
-        <form @submit.prevent="submit" method="post" class="bg-stone-100 rounded-lg flex flex-col items-center justify-center z-20 md:w-1/2 px-12 py-16 bounce2">
+        <form @submit.prevent="submit" method="post" class="bg-stone-100 rounded-lg flex flex-col items-center justify-center z-20 md:w-1/2 px-12 py-16">
 
             <div class="flex flex-col justify-center gap-5 h-fit w-full">
                 <h1 class="text-lg font-bold text-center md:text-xl lg:text-3xl">Enter your reservation details</h1>
