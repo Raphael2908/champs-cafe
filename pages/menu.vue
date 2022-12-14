@@ -54,7 +54,7 @@
 import { ArrowsPointingOutIcon, ArrowsPointingInIcon } from '@heroicons/vue/24/solid/index'
 export default {
     async setup() {
-        const menu = await useLazyFetch('/api/menu/getMenu')
+        const menu = await useFetch('/api/menu/getMenu')
 
         return {
             menu: menu.data.value 

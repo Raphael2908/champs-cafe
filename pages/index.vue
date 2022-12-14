@@ -1,4 +1,4 @@
-<template id="test">
+<template>
     <div>
         <ReservationForm @modal="reservationEventHandler" :show="reservation"/>
         <!-- Abra -->

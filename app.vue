@@ -8,22 +8,18 @@
 
 <style>
 .page-enter-active{
-  position: absolute;
-  top: 0px;
-  transition: all 1s ease-out;
+  transition: all 0.4s ease-out;
 }
 .page-leave-active {
-  position: absolute;
-  bottom: 0px;
-  transition: all 1s ease-out;
+  transition: all 0.4s ease-in;
 }
 
 .page-enter-from{
-  top: 400px;
+  transform: translateY(200px);
   opacity: 0;
 }
 .page-leave-to {
-  bottom: -400px;
+  transform: translateY(200px);
   opacity: 0;
 }
 </style>
